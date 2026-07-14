@@ -56,7 +56,8 @@
   </div>
 </div>
 
-script type="module" 
+<script>
+  script type="module" 
   import { startPaco } from "./app.js";
   import {initializeApp }
   from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js"; 
@@ -72,5 +73,6 @@ script type="module"
   loginBtn.addEventListener("click", () => { const email = emailInput.value.trim(); const password = passwordInput.value; 
   signInWithEmailAndPassword(auth, email, password) .catch((err) => alert("Login failed: " + err.message)); }); 
   onAuthStateChanged(auth, (user) => { if (user && !pacoStarted) { pacoStarted = true; emailInput.style.display = "none"; passwordInput.style.display = "none"; loginBtn.style.display = "none"; document.querySelector("main").style.display = "block"; startPaco(); } });
+</script>
 </body>
 </html>
