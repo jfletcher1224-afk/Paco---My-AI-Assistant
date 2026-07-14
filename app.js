@@ -1,4 +1,4 @@
-(() => {
+function startPaco() {
   const canvas = document.getElementById('hud');
   const ctx = canvas.getContext('2d');
   const W = canvas.width, H = canvas.height;
@@ -443,4 +443,4 @@ const a = (1 - r / col.len) * alphaMul; if (a <= 0.02) continue; ctx.globalAlpha
     requestAnimationFrame(draw);
   }
   requestAnimationFrame(draw);
-})();
+}
