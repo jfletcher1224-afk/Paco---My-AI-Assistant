@@ -29,21 +29,7 @@
   let voiceName = localStorage.getItem('paco_voice') || '';
 
   modelSelect.value = model;
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBG0_JSfjYyD-JUth0-tD5-GHCpyX9VtPE",
-    authDomain: "paco---my-ai-assistant.firebaseapp.com",
-    projectId: "paco---my-ai-assistant",
-    storageBucket: "paco---my-ai-assistant.firebasestorage.app",
-    messagingSenderId: "813461861331",
-    appId: "1:813461861331:web:9deaf3fb206cb7c05db526"
-  };
   // ---------- Settings ----------
   function maskKey(k) {
     if (!k) return 'No key saved.';
