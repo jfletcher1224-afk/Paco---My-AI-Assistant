@@ -57,13 +57,12 @@
 </div>
 
 <script>
-  script type="module" 
   import { startPaco } from "./app.js";
   import {initializeApp }
   from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js"; 
   import { getAuth, signInWithEmailAndPassword, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js"; 
-  const firebaseConfig = { apiKey: "AIzaSyBG0_JSfjYyD-JUth0-tD5-GHCpyX9VtPE", authDomain: "paco---my-ai-assistant.firebaseapp.com", projectId: "paco---my-ai-assistant", storageBucket: "paco---my-ai-assistant.firebasestorage.app", messagingSenderId:"813461861331" 
+  const firebaseConfig = { apiKey: "AIzaSyBG0_JSfjYyD-JUth0-tD5-GHCpyX9VtPE", authDomain: "paco---my-ai-assistant.firebaseapp.com", projectId: "paco---my-ai-assistant", storageBucket: "paco---my-ai-assistant.firebasestorage.app", messagingSenderId:"813461861331", 
    appId: "1:813461861331:web:9deaf3fb206cb7c05db526" }; 
   const app = initializeApp(firebaseConfig); 
   const auth = getAuth(app); 
