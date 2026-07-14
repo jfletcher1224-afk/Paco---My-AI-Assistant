@@ -444,3 +444,4 @@ const a = (1 - r / col.len) * alphaMul; if (a <= 0.02) continue; ctx.globalAlpha
   }
   requestAnimationFrame(draw);
 }
+export { startPaco };
