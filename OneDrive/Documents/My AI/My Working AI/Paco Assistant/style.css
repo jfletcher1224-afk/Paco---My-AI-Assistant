@@ -1,0 +1,201 @@
+:root {
+  --bg: #05080d;
+  --cyan: #5ad8ff;
+  --cyan-dim: #1c4a5c;
+  --amber: #ffb347;
+  --red: #ff5a5a;
+  --panel: #0a1017;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--cyan);
+  font-family: Consolas, "Courier New", monospace;
+  letter-spacing: 0.05em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  text-shadow: 0 0 8px var(--cyan);
+}
+
+#settingsBtn {
+  position: absolute;
+  right: 1.2rem;
+  top: 0.8rem;
+  background: none;
+  border: 1px solid var(--cyan-dim);
+  color: var(--cyan);
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+#settingsBtn:hover { border-color: var(--cyan); }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem 2rem;
+}
+
+#hud {
+  max-width: 90vw;
+  max-height: 55vh;
+}
+
+#status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--cyan);
+  text-shadow: 0 0 6px var(--cyan);
+  min-height: 1.2rem;
+}
+
+#transcript {
+  width: min(560px, 90vw);
+  min-height: 4rem;
+  max-height: 12rem;
+  overflow-y: auto;
+  margin-top: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--cyan-dim);
+  background: var(--panel);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+#transcript .you { color: var(--amber); }
+#transcript .paco { color: var(--cyan); }
+#transcript .err { color: var(--red); }
+#transcript div { margin-bottom: 0.4rem; }
+
+#controls {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  width: min(560px, 90vw);
+}
+
+#talkBtn {
+  background: var(--panel);
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+  padding: 0.9rem 1.6rem;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  border-radius: 6px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 10px rgba(90,216,255,0.15);
+}
+#talkBtn.active {
+  background: var(--cyan);
+  color: var(--bg);
+  box-shadow: 0 0 20px var(--cyan);
+}
+#talkBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+#textForm {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+#textInput {
+  flex: 1;
+  background: var(--panel);
+  border: 1px solid var(--cyan-dim);
+  color: var(--cyan);
+  padding: 0.5rem 0.7rem;
+  font-family: inherit;
+}
+#textInput:focus { outline: none; border-color: var(--cyan); }
+#sendBtn {
+  background: none;
+  border: 1px solid var(--cyan-dim);
+  color: var(--cyan);
+  padding: 0.5rem 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+#sendBtn:hover { border-color: var(--cyan); }
+
+#settingsOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+#settingsOverlay.hidden { display: none; }
+
+#settingsPanel {
+  background: var(--panel);
+  border: 1px solid var(--cyan-dim);
+  padding: 1.5rem;
+  width: min(420px, 90vw);
+  box-shadow: 0 0 30px rgba(90,216,255,0.1);
+}
+#settingsPanel h2 {
+  margin-top: 0;
+  color: var(--cyan);
+  text-shadow: 0 0 6px var(--cyan);
+}
+#settingsPanel label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--cyan);
+}
+#settingsPanel input,
+#settingsPanel select {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--cyan-dim);
+  color: var(--cyan);
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  font-family: inherit;
+}
+#settingsPanel .hint {
+  font-size: 0.7rem;
+  color: var(--cyan-dim);
+  margin: 0.3rem 0 0;
+}
+.settingsActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.4rem;
+}
+.settingsActions button {
+  flex: 1;
+  background: none;
+  border: 1px solid var(--cyan-dim);
+  color: var(--cyan);
+  padding: 0.5rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+.settingsActions button:hover { border-color: var(--cyan); }
+#clearKey { border-color: #5c2a2a; color: var(--red); }
+#clearKey:hover { border-color: var(--red); }
