@@ -71,6 +71,6 @@ script type="module"
   let pacoStarted = false; 
   loginBtn.addEventListener("click", () => { const email = emailInput.value.trim(); const password = passwordInput.value; 
   signInWithEmailAndPassword(auth, email, password) .catch((err) => alert("Login failed: " + err.message)); }); 
-  onAuthStateChanged(auth, (user) => { if (user && !pacoStarted) { pacoStarted = true; emailInput.style.display = "none"; passwordInput.style.display = "none"; loginBtn.style.display = "none"; startPaco(); } });
+  onAuthStateChanged(auth, (user) => { if (user && !pacoStarted) { pacoStarted = true; emailInput.style.display = "none"; passwordInput.style.display = "none"; loginBtn.style.display = "none"; document.querySelector("main").style.display = "block"; startPaco(); } });
 </body>
 </html>
