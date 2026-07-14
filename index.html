@@ -11,7 +11,20 @@
   <h1>PACO</h1>
   <button id="settingsBtn" title="Settings">⚙</button>
 </header>
+<input id="email" type="text" placeholder="email">
+<input id="password" type="password" placeholder="password">
+<button id="loginBtn"> Login</button>
 
+const loginBtn = document.getElementById ("loginBtn");
+
+const emailInput = document.getElementById ("email");
+const passwordInput = document.getElementById ("password")
+
+loginBtn.addEventListener ("click", async () => {
+	const email = emailInput.value;
+	const password = passwordInput.value;
+await signInWithEmailAndPassword (auth, email, password);
+});
 <main>
   <canvas id="hud" width="480" height="420"></canvas>
   <div id="status">IDLE</div>
