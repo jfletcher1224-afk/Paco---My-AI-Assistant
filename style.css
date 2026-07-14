@@ -47,12 +47,7 @@ header h1 {
 }
 #settingsBtn:hover { border-color: var(--cyan); }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1rem 2rem;
-}
+main { display: none; }
 
 #hud {
   max-width: 90vw;
