@@ -56,6 +56,21 @@
   </div>
 </div>
 
-<script src="app.js"></script>
+script type="module" 
+  import { startPaco } from "./app.js";
+  import {initializeApp }
+  from "https://www.gstatic.com/firebasejs/12.16.0/firebase-app.js"; 
+  import { getAuth, signInWithEmailAndPassword, onAuthStateChanged }
+  from "https://www.gstatic.com/firebasejs/12.16.0/firebase-auth.js"; 
+  const firebaseConfig = { apiKey: "AIzaSyBG0_JSfjYyD-JUth0-tD5-GHCpyX9VtPE", authDomain: "paco---my-ai-assistant.firebaseapp.com", projectId: "paco---my-ai-assistant", storageBucket: "paco---my-ai-assistant.firebasestorage.app", messagingSenderId: "813461861331:web:9deaf3fb206cb7c05db526" }; 
+  const app = initializeApp(firebaseConfig); 
+  const auth = getAuth(app); 
+  const loginBtn = document.getElementById("loginBtn"); 
+  const emailInput = document.getElementById("email"); 
+  const passwordInput = document.getElementById("password"); 
+  let pacoStarted = false; 
+  loginBtn.addEventListener("click", () => { const email = emailInput.value.trim(); const password = passwordInput.value; 
+  signInWithEmailAndPassword(auth, email, password) .catch((err) => alert("Login failed: " + err.message)); }); 
+  onAuthStateChanged(auth, (user) => { if (user && !pacoStarted) { pacoStarted = true; emailInput.style.display = "none"; passwordInput.style.display = "none"; loginBtn.style.display = "none"; startPaco(); } });
 </body>
 </html>
